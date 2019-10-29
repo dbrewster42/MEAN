@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>users</title>
+</head>
+<body>
+	<script type="text/javascript">
+		users = [
+		{
+		    fname: "Kermit",
+		    lname: "the Frog",
+		    languages: ["Python", "JavaScript", "C#", "HTML", "CSS", "SQL"],
+		    interests: {
+		      music: ["guitar", "flute"],
+		      dance: ["tap", "salsa"],
+		      television: ["Black Mirror", "Stranger Things"]
+		    }
+		  },
+		  {
+		    fname: "Winnie",
+		    lname: "the Pooh",
+		    languages: ["Python", "Swift", "Java"],
+		    interests: {
+		      food: ["honey", "honeycomb"],
+		      flowers: ["honeysuckle"],
+		      mysteries: ["Heffalumps"]
+		    }
+		  },
+		  {
+		    fname: "Arthur",
+		    lname: "Dent",
+		    languages: ["JavaScript", "HTML", "Go"],
+		    interests: {
+		      space: ["stars", "planets", "improbability"],
+		      home: ["tea", "yellow bulldozers"]
+		    }
+		  }
+		]
+		// function userL(users){
+
+		// 	for (var i = 0; i < users.length; i++){
+		// 		var langs = "";
+		// 		var name = "";
+		// 		// var inters = "";
+		// 		for (var a = 0; a < users[i]['languages'].length-1; a++){
+		// 			langs += users[i]['languages'][a] + ", ";
+		// 		}
+		// 		a++;
+		// 		langs += "and " + users[i]['languages'][a] + ".";
+		// 		name += users[i]['fname'] + " " + users[i]['lname'];
+		// 	}
+
+		// 		console.log(name + " knows " + langs);
+		// }
+		function userLanguages(users){
+
+			for (var i = 0; i < users.length; i++){
+				var langs = [];
+				var name = "";
+				name += users[i]['fname'] + " " + users[i]['lname'];
+				langs.push(users[i]['languages']);
+				
+				// a++;
+				// langs += "and " + users[i]['languages'] + ".";
+				
+			}
+			str = "";
+			for (var a=0; a < langs.length-1; a++){
+				str += langs[a] + ", "			
+			}
+			a++;
+			str += "and " + langs[a] + "."
+				console.log(name + " knows " + langs);
+		}
+	</script>
+</body>
+</html>
+  
+   

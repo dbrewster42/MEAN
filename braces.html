@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>asdf</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function braces(str){
+			var newArr = [];
+			for (let i=0; i < str.length; i++){
+				if (str.charAt(i) == '}' || str.charAt(i) == ']' || str.charAt(i) ==')'){
+					if (newArr.length == 0)
+						return false;
+					else {
+						var a = newArr.pop();
+						if (a != str.charAt(i))
+							return false;
+					}}
+
+				if (str.charAt(i) == '{')
+					newArr.push('}');
+				if (str.charAt(i) == '(')
+					newArr.push(')');
+				if (str.charAt(i) == '[')
+					newArr.push(']');					
+								
+			}
+			if (newArr.length == 0)
+				return true;
+			else
+				return false;
+		}
+	</script>
+	
+</body>
+</html>

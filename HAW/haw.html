@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HAW</title>
+	
+	
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var tigger = { character: "Tigger" ,
+		'target': false,
+		'honey' : false,
+			greet: function(){
+				console.log("The wonderful thing about Tiggers is Tiggers are wonderful things!");
+			}
+		};
+		var pooh = { character: "Winnie the Pooh",
+		'target': false,
+		'honey' : true,
+			greet: function(){
+				console.log("My last name comes from my frequent bowel movements");
+			}
+
+		 };
+		tigger.north = pooh; 
+		pooh.south = tigger;
+		var piglet = { character: "Piglet"};  
+		piglet.east = tigger.north;       
+		var bees = { character: "Bees"};
+		pooh.east = bees;
+		bees.west = tigger.north;
+		var cr = { character: "Christopher Robin",
+			greet: function(){
+				console.log("I think I am hallucinating");
+			}};
+		pooh.north = cr;
+		var owl = { character: "Owl"};
+		cr.west = owl;
+		owl.south = piglet;
+		var rabbit = { character: "rabbit"};
+		var gopher = { character: "Gopher"};
+		var kanga = { character: "Kanga",
+					'target': true,
+					'honey': false,}
+					;
+		cr.east = rabbit;
+		cr.north = kanga;
+		owl.east = cr;
+		rabbit.west = cr;
+		rabbit.south = bees;
+		rabbit.east = gopher;
+		gopher.west = rabbit;
+		var eye = { character: "Eeyore"}
+		var heff = { character: "Heffalumps"}
+		heff.west = eye;
+		eye.east = heff;
+		eye.south = kanga;
+		kanga.north = eye;
+		kanga.south = cr;
+		cr.west = pooh;
+		pooh.west = piglet;
+		bees.north = rabbit;
+		var player = {
+		    location: tigger
+		}
+		function mission(location){
+			if (location.target && place.honey)
+				console.log("You win!");
+			else
+				console.log('This is not the right place')
+		}
+		function pickup(){
+				if(player.location.honey){
+					player.location.honey = false;
+					player.honey = true;
+				}
+				else
+					console.log("There is no honey here");
+		}
+		function drop(){
+			if (player.honey){
+				player.location.honey = true;
+				player.honey = false;
+
+			}
+			mission(player.location)
+		}
+
+		function move(str){
+			if (str == "north"){		
+				if (player.location.north == null)
+					console.log( "You may not go that way!" );
+				else {
+					player.location = player.location.north;
+					console.log( "You are now at " + player.location.character + "'s house");
+				}
+			}
+			if (str == "south"){		
+				if (player.location.south == null)
+					console.log( "You may not go that way!" );
+				else {
+					player.location = player.location.south;
+					console.log( "You are now at " + player.location.character + "'s house");
+				}
+			}
+			if (str == "east"){		
+				if (player.location.east == null)
+					console.log( "You may not go that way!" );
+				else {
+					player.location = player.location.east;
+					console.log( "You are now at " + player.location.character + "'s house");
+				}
+			}
+			if (str == "west"){		
+				if (player.location.west == null)
+					console.log( "You may not go that way!" );
+				else {
+					player.location = player.location.west;
+					console.log( "You are now at " + player.location.character + "'s house");
+
+				}
+			}
+			return player.location
+
+		}
+	</script>
+
+</body>
+</html>

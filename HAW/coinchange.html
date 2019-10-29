@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>asd</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function coinC(n){
+			var count = 0;
+			for (var i = n; i >= 100; i = i - 100){
+				count++;
+			}
+			const dollars = count;
+			var count = 0;
+			for (var i = i; i >= 25; i = i - 25){
+				count++;
+			}
+			const quarters = count;
+			count = 0;
+			for (i = i; i >= 10; i -= 10){
+				count++;
+			}
+			const dimes = count;
+			if (i > 5){
+				count = 1;
+				i -= 5;
+			}
+			const nickels = count;
+			const pennies = i;
+			console.log(`There are ${quarters} quarters, ${dimes} dimes, ${nickels} nickels, and ${pennies} pennies `)
+		}
+
+		function coin(objs){
+			for (obj in objs){
+				if (obj == "dollars")
+					var n = objs[obj] * 100;
+  				if (obj == "quarters")
+					n = objs[obj] * 25;
+				if (obj == "dimes")
+					n = n + objs[obj] * 10;
+				if (obj == "nickels")
+					n += objs[obj] * 5
+				if (obj == "pennies")
+					n += objs[obj]
+				}
+			var count = 0;
+			for (var i = n; i >= 100; i = i - 100){
+				count++;
+			}
+			const dollars = count;
+			var count = 0;
+			for (var i = i; i >= 25; i = i - 25){
+				count++;
+			}
+			const quarters = count;
+			count = 0;
+			for (i = i; i >= 10; i -= 10){
+				count++;
+			}
+			const dimes = count;
+			if (i >= 5){
+				count = 1;
+				i -= 5;
+			}
+			const nickels = count;
+			const pennies = i;
+			console.log(`There are ${dollars} dollars, ${quarters} quarters, ${dimes} dimes, ${nickels} nickels, and ${pennies} pennies `)
+		}
+
+		
+	</script>
+</body>
+</html>
