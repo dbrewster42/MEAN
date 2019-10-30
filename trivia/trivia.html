@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){ 
+            
+            function displayQ(data){
+                d = data.results;
+                             
+                console.log(data.results);
+                // for (i = 0; i < data.results.length; i++)                    
+            }
+
+             
+            $.get("https://opentdb.com/api.php?amount=10&category=10&type=multiple", displayQ)
+
+            $("#a1").click(function(){
+                $("#a1").html("<div class='center'><p>"+d[0].question+"</p><br><p>"+d[0].incorrect_answers[0]+"</p><p>"+d[0].incorrect_answers[1]+"</p><p>"+d[0].correct_answer+"</p><p>"+d[0].incorrect_answers[2]+"</p></div>");
+            })
+            $("#a2").click(function(){
+                $("#a2").html("<div class='center'><p>"+d[1].question+"</p><br><p>"+d[1].incorrect_answers[0]+"</p><p>"+d[1].incorrect_answers[1]+"</p><p>"+d[1].correct_answer+"</p><p>"+d[1].incorrect_answers[2]+"</p></div>");
+            })
+            $("#a3").click(function(){
+                $("#a3").html("<div class='center'><p>"+d[2].question+"</p><br><p>"+d[2].incorrect_answers[0]+"</p><p>"+d[2].incorrect_answers[1]+"</p><p>"+d[2].correct_answer+"</p><p>"+d[2].incorrect_answers[2]+"</p></div>");
+            })
+            $("#a4").click(function(){
+                $("#a4").html("<div class='center'><p>"+d[3].question+"</p><br><form method="POST"><input type="radio" value="answer1">"+d[2].incorrect_answers[0]+ "</input><input type="radio" value="answer2">"+d[3].correct_answer+ "</input><input type="radio" value="answer3">"+d[3].incorrect_answers[1]+"</input></form></div>");
+            })
+
+        });
+
+    </script>
+    
+</head>
+<body>
+    <h2>TRIVIA GAME!!</h2>
+    <p class="p">Pick an answer</p>
+    <div id="category1"></div>
+    <p id="here"></p>
+      <div class="columns">
+            <h2 class="center">d</h2>
+            <div id="a1" class="boxes">
+                <h3 class="cushion">100</h3>
+            </div>
+            <div id="a2" class="boxes">
+                <h3 class="cushion">200</h3>
+            </div>
+            <div id="a3" class="boxes">
+                <h3 class="cushion">300</h3>
+            </div>
+            <div id="a4" class="boxes">
+                <h3 class="cushion">500</h3>
+            </div>
+        </div>
+</body>
+</html>
