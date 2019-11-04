@@ -1,0 +1,11 @@
+div {
+	background-color: black;
+	color: white;
+	border: 3px solid blue;
+	width: 500px;
+	height: 300px;
+}
+#pic {
+	width: 200px;
+	height: 150px;
+}

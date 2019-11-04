@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Details Page for <%=kitty.name %></h1>
+	<img src="images/<%=kitty.pic>">
+	<div>
+		<h3><%= kitty.favFood %></h3>
+		<h3><%= kitty.age %></h3>
+		<% for spot in kitty.spots %>
+		<h3><%= kitty.spots[spot] %></h3>
+	</div>
+</body>
+</html>
