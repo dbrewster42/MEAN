@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New</title>
+</head>
+<body>
+	<%- JSON.stringify(messages) %> 
+	<% if(messages.registration) { %>
+    	<% for (var x of messages.registration) { %>
+    	<h3><%= x %></h3>
+    	<% } %>
+ 	<% } %>
+	<form method="post" action="/add">
+		Name <input type="text" name="name"><br>
+		Species <input type="text" name="species"><br>
+		Description <input type="textarea" name="description"><br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>
